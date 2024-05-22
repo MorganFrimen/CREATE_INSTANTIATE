@@ -17,7 +17,14 @@ public:
 
 int main()
 {
-	Entity* e;
+	int a{ 2 };
+	int* b = new int[50]; // 200 bytes
+
+	Entity* e = new Entity();
+	delete e;
+	delete[] b;
+
+	/*Entity* e;
 	{
 		Entity* entity = new Entity ("hello");
 
@@ -25,6 +32,6 @@ int main()
 		std::cout << entity->GetName() << std::endl;
 
 		delete e;
-	}
+	}*/
 	std::cin.get();
 }
