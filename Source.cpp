@@ -1,28 +1,38 @@
 #include <iostream>
 
-using String = std::string;
-
 class Entity
 {
 private:
-	String m_Name;
+	std::string m_Name;
+	int m_Age;
 
 public:
-	Entity() : m_Name("Uuknow") {}
-	Entity(const String& name) : m_Name(name){}
+	explicit Entity(const std::string& name)
+		: m_Name(name), m_Age(-1) {}
+	explicit Entity(int age)
+		: m_Name("Uuknow"), m_Age(age) {}
 
-	const String& GetName()const { return m_Name; }
+	const std::string& GetName()const { return m_Name; }
 };
 
+void PrintEntity(const Entity& entity)
+{
+	// Print
+}
 
 int main()
 {
+	Entity a { "Hello" };
+	Entity b { 22 };
+
+	/*
 	int a{ 2 };
 	int* b = new int[50]; // 200 bytes
 
 	Entity* e = new Entity();
 	delete e;
 	delete[] b;
+	*/
 
 	/*Entity* e;
 	{
@@ -33,5 +43,6 @@ int main()
 
 		delete e;
 	}*/
+
 	std::cin.get();
 }
